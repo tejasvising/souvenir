@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Employee's Corner</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Details</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Information
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">name</a>
+                        <a class="dropdown-item" href="#">present</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">absent</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Contact</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+
+
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+
+    <div class="container my-4">
+        <h2 class="text-center">Details</h2>
+        <div class="form-group">
+            <label for="year">Year</label>
+            <input class="form-control mr-sm-2" type="number" id="year" placeholder="Year" aria-label="Search" required></div>
+<div class="form-group">
+    <label for="month">Month</label>
+    <input  class="form-control mr-sm-2" type="number" id="month" placeholder="Month" aria-label="Search" required></div>
+            <div class="form-group">
+                <label for="title">Name</label>
+                <input type="text" class="form-control" id="title" aria-describedby="emailHelp" required>
+                <small id="emailHelp" class="form-text text-muted">Add a detail to the list</small>
+            </div>
+	<form>
+            <div class="form-group">
+                <label for="description">presents</label>
+                <input type="number" class="form-control" id="description" required >
+            </div>
+          <div class="form-group">
+                <label for="absent">absent</label>
+                <input type="number" class="form-control" id="absent" >
+            </div>
+	    <div class="form-group">
+		<label for="salary">salary</label>
+		<input type="number" class="form-control" id="salary" >
+	    </div>
+            <button   id="add" class="btn btn-primary">Add to list</button>
+            <button  id="clear" class="btn btn-primary" onclick="clearStorage()">Clear list</button></form>
+            
+        <div id="items" class="my-4">
+            <h2>Your space</h2>
+            <table class="table">
+                <thead>
+                  <tr id="yo">
+                    <th scope="col">SNo</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">present</th> 
+                    <th scope="col">absent</th> 
+		    <th scope="col">salary</th>
+                  </tr>
+                </thead>
+                <tbody id="tableBody">
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>tom</td>
+                    <td>3</td>
+		     <td>6</td>
+		    <td>797</td> 
+                    <td><button class="btn btn-sm btn-primary">Delete</button></td> 
+		     <td><button class="btn btn-sm btn-primary">Edit</button></td> 
+                  </tr>
+                  
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+        <script>
+            function getAndUpdate(){
+var add=document.getElementById('add');
+add.addEventListener('keypress', monthie, false);
+function monthie(month){
+if(month>12){
+    
+  getAndUpdate.preventDefault();
+update.preventDefault();
+}}
+
+
+
+year=document.getElementById('year').value;
+                console.log("Updating List...");
+                tit = document.getElementById('title').value;
+                desc = document.getElementById('description').value;
+function pres(desc){
+if(desc>31){
+throw 'Error:A month can have 31 days only'
+alert('Error:A month can have 31 days only');}
+if(month==2 && year%4==0 && desc>29){
+throw 'Error: feburary in a leap year can have 29 days only';
+alert('Error: feburary in a leap year can have 29 days only');}
+if(month==2 && year%4!=0 && desc>28){
+throw 'Error: febrary without a leap year can have 28 days only';
+alert('Error: febrary without a leap year can have 28 days only');}
+if((month==4 || month==6 || month==9 || month==11) && desc>30 ){
+throw 'Error: It cannot have more than 30 days';
+alert('Error: It cannot have more than 30 days');}}
+try{
+pres(desc);}
+catch(e){
+console.error(e);}
+		abs=null;
+		if(desc>31){
+alert("Error,No. of days in a month can't be greater than 31");}
+if(abs==null){
+
+if(month==1 || month==3 || month==5 || month==7 || month==8 || month==10 || month==12){
+abs=31-desc;}
+
+ if(month==2)
+{
+if(year%4==0)
+{
+abs=29-desc;
+}
+else if((year%4)!=0)
+{
+abs=28-desc;
+}
+}
+if(month==4 || month==6 || month==9 || month==11){
+abs=30-desc;}}
+
+		sal=document.getElementById('salary').value;
+                if (localStorage.getItem('itemsJson')==null){
+                    itemJsonArray = [];
+                    itemJsonArray.push([tit,desc,abs,sal]);
+                    localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
+                }
+                else{
+                    itemJsonArrayStr = localStorage.getItem('itemsJson')
+                    itemJsonArray = JSON.parse(itemJsonArrayStr);
+                    itemJsonArray.push([tit,desc,abs,sal]);
+                    localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
+                } function monthie(month){
+                if(month>12){
+    
+    getAndUpdate.preventDefault();
+  update.preventDefault();
+  }}
+  
+                update();function monthie(month){ if(month>12){
+    
+    getAndUpdate.preventDefault();
+  update.preventDefault();
+  }}
+  
+            }
+
+            function update(){
+            function monthie(month){
+                if(month>12){
+    
+    getAndUpdate.preventDefault();
+  update.preventDefault();
+  }}
+  
+                if (localStorage.getItem('itemsJson')==null){
+                    itemJsonArray = []; 
+                    localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
+                } 
+                else{
+                    itemJsonArrayStr = localStorage.getItem('itemsJson')
+                    itemJsonArray = JSON.parse(itemJsonArrayStr); 
+                }
+                // Populate the table
+                let tableBody = document.getElementById("tableBody");
+                let str = "";
+                itemJsonArray.forEach((element, index) => {
+                    str += `
+                    <tr>
+                    <th scope="row">${index + 1}</th>
+                    <td>${element[0]}</td>
+                    <td>${element[1]}</td> 
+		    <td>${element[2]}</td>
+		    <td>${element[3]}</td>
+		   
+		    
+                    <td><button class="btn btn-sm btn-primary" onclick="deleted(${index})">Delete</button></td> 
+		   <!-- <td><button class="btn btn-sm btn-primary" onclick="edited(${index})">Edit</button></td> -->
+                    </tr>`; 
+                });
+                tableBody.innerHTML = str;
+            }
+            add = document.getElementById("add");
+            add.addEventListener("click", getAndUpdate);
+            update();
+            function deleted(itemIndex){
+                console.log("Delete", itemIndex);
+                itemJsonArrayStr = localStorage.getItem('itemsJson')
+                itemJsonArray = JSON.parse(itemJsonArrayStr);
+                // Delete itemIndex element from the array
+                itemJsonArray.splice(itemIndex, 1);
+                localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray));
+                update();
+
+            }
+	    function monthie(month){
+            if(month>12){
+    
+    getAndUpdate.preventDefault();
+  update.preventDefault();
+  }}
+  
+
+            function clearStorage(){
+                if (confirm("Do you areally want to clear?")){
+                console.log('Clearing the storage')
+                localStorage.clear();
+                update()
+                }
+            }
+        </script>
+</body>
+
+</html>
