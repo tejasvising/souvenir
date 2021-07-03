@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width",initial-scale="1.0">
+
+<title>grid</title>
+<style>
+
+* {
+height: 100%;
+width: 100%;
+}
+.container{
+
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+ height: 100%;
+grid-template-rows:1fr;
+
+}
+.items1,.items2,.items3,.items4,.items5,.items6{
+
+ background-color: lightgreen;
+ border: 3px white solid;
+ border-radius: 10px;
+ height: 100%;
+ display:grid;
+ grid-template-columns:1fr;
+}
+.item1,.item2{
+ border: 3px white solid;
+ border-radius: 10px;
+ height:100%;
+ 
+}
+.item21, .item22, .item23{
+  border: 3px white solid;
+  border-radius: 10px;
+  height:100%;
+}
+.item31,.item32,.item33,.item34{
+   border: 3px white solid;
+  border-radius: 10px;
+  height:100%;
+}
+
+.item41,.item42,.item43,.item44,.item45,.item46{
+   border: 3px white solid;
+  border-radius: 10px;
+  height:100%;
+}
+.item51,.item52,item53,.item54,.item55,.item56,.item57,.item58,.item59,.item60,.item61,.item62{
+   border: 3px white solid;
+  border-radius: 10px;
+  height:100%;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="items1"> 1</div>
+<div class="items2"> 
+	<div class="item1">2</div>
+	<div class="item2">3</div>
+	</div>
+<div class="items3"> 
+	<div class="item21">4</div>
+	<div class="item22">5</div>
+	<div class="item23">6</div>
+	</div>
+<div class="items4"> 
+	<div class="item31">7</div>
+	<div class="item32">8</div>
+	<div class="item33">9</div>
+	<div class="item34">10</div>
+</div>
+<div class="items5"> 
+	<div class="item41">11</div>
+	<div class="item42">12</div>
+	<div class="item43">13</div>
+	<div class="item44">14</div>
+	<div class="item45">15</div>
+	<div class="item46">16</div></div>
+<div class="items6"> 
+	<div class="item51">17</div>
+	<div class="item52">18</div>
+	<div class="item53">19</div>
+	<div class="item54">20</div>
+	<div class="item55">21</div>
+	<div class="item56">22</div>
+	<div class="item57">23</div>
+	<div class="item58">24</div>
+	<div class="item59">25</div>
+	<div class="item60">26</div>
+	<div class="item61">27</div>
+	<div class="item62">28</div>
+	</div>
+</body>
+</html>
+

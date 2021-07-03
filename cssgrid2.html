@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width",initial-scale="1.0">
+<title>CSS GRIDS</title>
+<style>
+ html,body{
+height: 100%;
+width: 100%;
+margin:0 0 0 0;
+}
+.all{
+ display:grid;
+ height: 100%;
+ grid-template-columns:1fr 4fr;
+ margin:0 0 0 0;
+ border-bottom:none;
+}
+
+
+.navigation,.heads,.article1,.article2,.foot,.content,.articles{
+ display:grid;
+ height: 100%;
+ background-color: yellow;
+ 
+ border-radius:3px;
+}
+
+.navigation{
+ display:grid;
+ height: 100%;
+ grid-template-rows:1fr;
+ grid-template-columns: 1fr 4fr;
+ border: 4px white solid;
+ border-top:none;
+ border-left:none;
+ border-bottom:4px yellow solid;
+ margin: 0 0 0 0;
+}
+.content{
+ display: grid;
+ grid-template-rows: 1fr 2fr 1fr;
+ border: 4px white solid;
+ border-top:none;
+ border-right:none;
+}
+
+.articles{
+ display:grid;
+ grid-template-columns: 2fr 1fr;
+ border:4px white solid;
+ border-left:none;
+ border-right:none;
+
+}
+.article1,.article2{
+ border: 4px white solid;
+ border-bottom: none;
+}
+.article1{
+ border-left: none;
+  border-bottom: none;
+}
+.article2{
+ border-right: none;
+  border-bottom: none;
+}
+
+.foot{
+ border-left:none;
+ border-top: 4px white solid;
+ border-right:none;
+}
+.articles{
+ border-bottom: none;
+}
+
+</style>
+</head>
+<body>
+<div class="all">
+  <div class="navigation">Nav</div>
+  <div class="content">
+	<div class="heads">Header</div>
+	<div class="articles">
+		<div class="article1">Article</div>
+		<div class="article2">Ads</div>
+	</div>
+	<div class="foot">Footer</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Employee Details</title>
+  </head>
+  <body>
+ 
+
+    
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Employee Details</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ABOUT
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contact Us</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+     </form> 
+    </div>
+  </div>
+</nav>
+<div class="container my-4">
+<h2 class="text-center">Employee Details</h2>
+
+<!-- <form> -->
+  <div class="mb-3">
+    <label for="title" class="form-label">Name</label>
+    <input type="text" class="form-control" id="title" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Add a member to the list</div>
+  </div>
+  
+<div class="form-group">
+  <label for="description">No. of present</label>
+  <input type="number" class="form-control" id="description">
+</div>
+<div class="form-group">
+  <label for="absent">No. of absent</label>
+  <input type="number" class="form-control" id="absent">
+</div>
+<div class="form-group">
+  <label for="salary">Salary</label>
+  <input type="number" class="form-control" id="salary">
+</div>
+
+  
+
+  <button type="submit" id="add" class="btn btn-primary">Add to list</button>
+<!-- </form> -->
+<div id="items" class="my-4">
+<h2>Your Items</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">SNo</th>
+      <th scope="col">Name of Employee</th>
+      <th scope="col">No. of presents</th>
+	<th scope="col">No. of absents</th>
+	<th scope="col">Salary</th>
+    <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody id="tableBody">
+    <tr>
+      <th scope="row">1</th>
+      <td>tom</td>
+      <td>29</td>
+      <td>1</td>
+      <td>45000</td>
+      <td><button class="btn btn-sm btn-primary">Delete</button></td>
+    </tr>
+    
+  </tbody>
+</table>
+</div>
+</div>
+
+
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+<script>
+add=document.getElementById("add");
+if(add)
+add.addEventListener("click",()=>{
+console.log("Updating List. . .");
+tit=document.getElementById('title').value;
+desc=document.getElementById('description').value;
+abs=document.getElementById('absent').value;
+sal=document.getElementById('salary').value;
+if(localStorage.getItem('itemsJson')==null){
+itemJsonArray=[];
+itemJsonArray.push([tit,desc]);
+localStorage.setItem('itemsJson',JSON.stringify(itemJsonArray))
+}
+
+else{itemJsonArrayStr=localStorage.getItem('itemsJson')
+itemJsonArray=JSON.parse(itemJsonArrayStr);
+itemJsonArray.push([tit,desc,abs,sal]);
+localStorage.setItem('itemsJson',JSON.stringify(itemJsonArray))
+}
+let tableBody=document.getElementById("tableBody");
+let str="";
+itemJsonArray.forEach((element,index) => {
+str+=`
+  <tr>
+      <th scope="row">${index+1}</th>
+      <td>${element[0]}</td>
+      <td>${element[1]}</td>
+      <td>${element[2]}</td>
+      <td>${element[3]}</td>
+      <td><button class="btn btn-sm btn-primary">Delete</button></td>
+    </tr>`;
+});
+if(str)
+tableBody.innerHTML = str;
+
+
+
+
+
+
+
+
+
+
+});
+
+</script>
+
+  </body>
+</html>

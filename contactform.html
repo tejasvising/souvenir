@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Contact form</title>
+<link rel="stylesheet" href="styler.css">
+</head>
+<style>
+body {
+  background-image: url('backgroundimage.jpg');
+background-repeat: no-repeat;
+ background-size: cover;
+}
+</style>
+<body>
+<div class="container">
+<form action="">
+   <h1 class="main_heading">Contact Form</h1>
+   <!--<p>Required fields are marked with *</p>-->
+<!--<h2>Contact information</h2>-->
+ <p><input type="text" name="name" required placeholder="Your full name"></p>
+ 
+    <!--<legend></legend>-->
+    <p> Male<input type="radio" name="gender" id="male" required>&nbsp;&nbsp;&nbsp;&nbsp;Female<input type="radio" name="gender" id="female" required></p>
+   
+<p><input type="email" name="email" required placeholder="Valid Email Address"></p>
+<p><textarea name="message" id="message" cols="100" rows="8" placeholder="Your Message to Us"></textarea></p>
+<p><textarea name="subject" id="subject" cols="100" rows="1" placeholder="Subject"></textarea></p>
+<input type="submit" value="Send">
+</form>
+</div>
+</body>
+</html>
